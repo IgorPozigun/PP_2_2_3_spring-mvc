@@ -2,12 +2,12 @@ package web.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class  AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     // Метод, указывающий на класс конфигурации
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return null;
+        return new Class<?>[]{WebConfig.class};
     }
 
 
@@ -15,7 +15,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     @Override
     protected Class<?>[] getServletConfigClasses() {
         return new Class<?>[]{
-                WebConfig.class
+                WebConfig.class // теперь знаем где находиться спринг конфигурация
         };
     }
 
