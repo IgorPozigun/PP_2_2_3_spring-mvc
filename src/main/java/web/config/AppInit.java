@@ -7,7 +7,7 @@ public class  AppInit extends AbstractAnnotationConfigDispatcherServletInitializ
     // Метод, указывающий на класс конфигурации
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[]{WebConfig.class};
+        return null;
     }
 
 

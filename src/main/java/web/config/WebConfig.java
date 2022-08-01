@@ -22,12 +22,12 @@ public class WebConfig implements WebMvcConfigurer {
         this.applicationContext = applicationContext;
     }
 
-
+    //регистрируется :web.xmlDispatcherServlet
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
-        templateResolver.setPrefix("/WEB-INF/pages/");//папка где лежат наши представления
+        templateResolver.setPrefix("/WEB-INF/views/Users");//папка где лежат наши представления
         templateResolver.setSuffix(".html");// задаем расширение этих представлений
         return templateResolver;
     }
@@ -46,5 +46,7 @@ public class WebConfig implements WebMvcConfigurer {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine());
         registry.viewResolver(resolver);
+        resolver.setCharacterEncoding("UTF-8");
+        resolver.setContentType("text/html; charset=UTF-8");
     }
 }
